@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #254b48;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    z-index: 100;
+    transition: .3s;
+}
+
+header.scrolled {
+    box-shadow: 0 3px 15px #00000015;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    color: #104d49;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+}
+
+.enlaces {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.enlaces a {
+    font-size: 13px;
+    transition: .3s;
+}
+
+.enlaces a:hover {
+    color: #109b8e;
+}
+
+#menu {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.boton {
+    display: inline-block;
+    background: #109b8e;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.boton:hover {
+    background: #104d49;
+    transform: translateY(-3px);
+}
+
+.hero {
+    min-height: 730px;
+    padding: 150px 8% 80px;
+    background: radial-gradient(circle at 70% 20%, #d7f5ef, #f7fffd 65%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-contenido {
+    width: 100%;
+    max-width: 540px;
+    margin-left: 0;
+    text-align: left;
+    animation: entrada 1s ease;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #00cca3;
+    color: #ffffff;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #104d49;
+    line-height: 1.15;
+    margin-bottom: 2px;
+}
+
+.hero h1 span {
+    color: #109b8e;
+}
+
+.hero p {
+    color: #657b79;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.boton-blanco {
+    background: white;
+    color: #109b8e;
+    border: 1px solid #109b8e;
+    margin-left: 10px;
+}
+
+.boton-blanco:hover {
+    color: white;
+}
+
+.estadisticas {
+    display: flex;
+    justify-content: flex-start;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.estadisticas h3 {
+    color: #109b8e;
+    font-size: 22px;
+}
+
+.estadisticas p {
+    font-size: 11px;
+    margin: 0;
+}
+
+.indicador {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    border: 1px solid #109b8e;
+    color: #109b8e;
+    border-radius: 20px;
+    padding: 5px 9px;
+    animation: subir 1s infinite alternate;
+}
+
+/*para la animacion del inicio que sale :) */
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.titulo {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+.titulo h2,
+.nosotros h2,
+.contacto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #104d49;
+    margin-bottom: 12px;
+}
+
+.titulo p,
+.contacto-contenido > p {
+    color: #657b79;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.servicios {
+    background: #f6f9fc;
+}
+
+#servicios {
+    scroll-margin-top: 70px;
+}
+
+.detalle span i {
+    color: #15aa91;
+    font-size: 30px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.tarjeta {
+    background: white;
+    padding: 25px;
+    border: 1px solid #e5eeee;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px #00000012;
+}
+
+.icono {
+    background: #eaf9f6;
+    color: #109b8e;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.tarjeta:hover .icono {
+    color: white;
+    background-color: #075049;
+}
+
+.tarjeta h3 {
+    font-size: 15px;
+    color: #104d49;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    color: #657b79;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.mas-info {
+    background: none;
+    border: none;
+    color: #109b8e;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+#nosotros {
+    scroll-margin-top: 80px;
+}
+
+.nosotros-contenido p {
+    color: #657b79;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.nosotros ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.nosotros li {
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: #657b79;
+}
+
+.nosotros-lista {
+    display: grid;
+    gap: 15px;
+}
+
+.nosotros-contenido li {
+    color: rgb(8, 0, 0);
+    font-size: 14px;
+}
+
+.nosotros-contenido span{
+    background-color: #b3ffdffb;
+    border-radius: 29px;
+    font-weight: 900;
+    color: rgb(0, 70, 41);
+}
+
+.detalle {
+    border: 1px solid #e4eeee;
+    padding: 20px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.detalle:hover {
+    transform: translateX(5px);
+}
+
+.detalle span {
+    font-size: 22px;
+}
+
+.detalle h3 {
+    font-size: 14px;
+    color: #104d49;
+    margin: 8px 0;
+}
+
+.detalle p {
+    font-size: 12px;
+    color: #657b79;
+}
+
+.banner {
+    background: #129c7a;
+    color: white;
+    text-align: center;
+    padding: 55px 8%;
+}
+
+.banner h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.banner p {
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.banner .boton {
+    background: white;
+    color: #109b8e;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.testimonio {
+    border: 1px solid #e5eeee;
+    border-radius: 10px;
+    padding: 25px;
+    transition: 0.3s;
+    
+}
+
+.testimonio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #00000010;
+}
+
+#testimonios {
+    scroll-margin-top: 120px;
+}
+
+.estrellas {
+    color: #ff9c26;
+}
+
+.testimonio p {
+    color: #657b79;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.persona {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.persona > span {
+    background: #109b8e;
+    color: white;
+    border-radius: 50%;
+    padding: 9px;
+    font-size: 10px;
+}
+
+.persona h3 {
+    color: #104d49;
+    font-size: 12px;
+}
+
+.persona small {
+    color: #657b79;
+    font-size: 10px;
+}
+
+.contacto {
+    background: #f6f9fc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+#contacto {
+    scroll-margin-top: 20px;
+}
+
+.informacion {
+    margin-top: 30px;
+}
+
+.informacion p {
+    color: #657b79;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.informacion strong {
+    color: #104d49;
+}
+
+.formulario {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px #00000012;
+}
+
+.formulario label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #104d49;
+    margin: 12px 0 7px;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e9e8;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.formulario textarea {
+    min-height: 90px;
+}
+
+.informacion p i {
+    color: #117744;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.formulario .boton {
+    width: 100%;
+    margin: 18px 0 10px;
+}
+
+.formulario small {
+    display: block;
+    color: #657b79;
+    font-size: 10px;
+    text-align: center;
+}
+
+#mensajeResultado {
+    text-align: center;
+    color: #109b8e;
+    font-size: 12px;
+}
+
+footer {
+    background: #104d49;
+    color: white;
+    padding: 40px 8% 15px;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+footer h3,
+footer h4 {
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    display: block;
+    color: #d0e5e1;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #ffffff20;
+    padding-top: 15px;
+}
+
+#modal,
+#modalExito,
+#modalServicio {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #00000080;
+    z-index: 300;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#modal.activo,
+#modalExito.activo,
+#modalServicio.activo {
+    display: flex;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: entrada .3s;
+}
+
+.modal-contenido h2 {
+    color: #104d49;
+    margin-bottom: 15px;
+}
+
+.modal-contenido p {
+    color: #657b79;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.boton-cancelar {
+    background: #e5eeee;
+    color: #104d49;
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 6%;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .enlaces {
+        display: none;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    .enlaces.mostrar {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 130px 6% 80px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .estadisticas {
+        gap: 20px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .servicios-grid,
+    .testimonios-grid,
+    .nosotros,
+    .contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo h2,
+    .nosotros h2,
+    .contacto h2 {
+        font-size: 27px;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr;
+    }
+}
